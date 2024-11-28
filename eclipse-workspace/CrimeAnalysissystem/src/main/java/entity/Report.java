@@ -1,86 +1,97 @@
 package entity;
 
-import java.util.Date;
-
-public class Report {
-    private int reportID;
-    private int incidentID;
-    private int reportingOfficer;
-    private Date reportDate;
-    private String reportDetails;
-    private String status;
+public class Officer {
+    private int officerID;
+    private String firstName;
+    private String lastName;
+    private String badgeNumber;
+    private String rank;
+    private String contactInformation;
+    private int agencyID;  // Foreign Key linking to Agency
 
     // Default Constructor
-    public Report() {}
+    public Officer() {}
 
     // Parameterized Constructor
-    public Report(int reportID, int incidentID, int reportingOfficer, Date reportDate, String reportDetails, String status) {
-        this.reportID = reportID;
-        this.incidentID = incidentID;
-        this.reportingOfficer = reportingOfficer;
-        this.reportDate = reportDate;
-        this.reportDetails = reportDetails;
-        this.status = status;
+    public Officer(int officerID, String firstName, String lastName, String badgeNumber, String rank,
+                   String contactInformation, int agencyID) {
+        this.officerID = officerID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.badgeNumber = badgeNumber;
+        this.rank = rank;
+        this.contactInformation = contactInformation;
+        this.agencyID = agencyID;
     }
 
-    // Getters and Setters
-    public int getReportID() {
-        return reportID;
+    // Getters and Setters for each field
+    public int getOfficerID() {
+        return officerID;
     }
 
-    public void setReportID(int reportID) {
-        this.reportID = reportID;
+    public void setOfficerID(int officerID) {
+        this.officerID = officerID;
     }
 
-    public int getIncidentID() {
-        return incidentID;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setIncidentID(int incidentID) {
-        this.incidentID = incidentID;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public int getReportingOfficer() {
-        return reportingOfficer;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setReportingOfficer(int reportingOfficer) {
-        this.reportingOfficer = reportingOfficer;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public Date getReportDate() {
-        return reportDate;
+    public String getBadgeNumber() {
+        return badgeNumber;
     }
 
-    public void setReportDate(Date reportDate) {
-        this.reportDate = reportDate;
+    public void setBadgeNumber(String badgeNumber) {
+        this.badgeNumber = badgeNumber;
     }
 
-    public String getReportDetails() {
-        return reportDetails;
+    public String getRank() {
+        return rank;
     }
 
-    public void setReportDetails(String reportDetails) {
-        this.reportDetails = reportDetails;
+    public void setRank(String rank) {
+        this.rank = rank;
     }
 
-    public String getStatus() {
-        return status;
+    public String getContactInformation() {
+        return contactInformation;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setContactInformation(String contactInformation) {
+        this.contactInformation = contactInformation;
     }
 
+    public int getAgencyID() {
+        return agencyID;
+    }
+
+    public void setAgencyID(int agencyID) {
+        this.agencyID = agencyID;
+    }
+
+    // ToString Method
     @Override
     public String toString() {
-        return "Report{" +
-                "reportID=" + reportID +
-                ", incidentID=" + incidentID +
-                ", reportingOfficer=" + reportingOfficer +
-                ", reportDate=" + reportDate +
-                ", reportDetails='" + reportDetails + '\'' +
-                ", status='" + status + '\'' +
+        return "Officer{" +
+                "officerID=" + officerID +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", badgeNumber='" + badgeNumber + '\'' +
+                ", rank='" + rank + '\'' +
+                ", contactInformation='" + contactInformation + '\'' +
+                ", agencyID=" + agencyID +
                 '}';
     }
 }
